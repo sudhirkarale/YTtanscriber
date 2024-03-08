@@ -13,9 +13,17 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 # and summarizing the entire video and providing the important summary in points
 # within 5000 words. Please provide the summary of the text given here:  """
 
-prompt = """As a YouTube video summarizer, your task is to generate a concise summary of the provided transcript.
- Your summary should encapsulate the key points discussed in the video within a maximum of 5000 words. 
- Please analyze the transcript below and provide a detailed summary."""
+# prompt = """As a YouTube video summarizer, your task is to generate a concise summary of the provided transcript.
+#  Your summary should encapsulate the key points discussed in the video within a maximum of 5000 words. 
+#  Please analyze the transcript below and provide a detailed summary."""
+
+prompt = """You are a concise and informative YouTube video summarizer. 
+
+Analyze the provided transcript text and identify the key points discussed in the video. 
+
+Present a bulleted list summary highlighting the most important information, focusing on actionable takeaways and key concepts. 
+
+Ensure the summary is clear, well-structured, and adheres to a 5000-word limit."""
 
 ## getting the transcript data from yt videos
 def extract_transcript_details(youtube_video_url):
